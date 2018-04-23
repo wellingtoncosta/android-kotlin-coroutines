@@ -1,7 +1,10 @@
 package br.com.wellingtoncosta.coroutines.di.components
 
 import br.com.wellingtoncosta.coroutines.App
+import br.com.wellingtoncosta.coroutines.di.modules.AppModule
+import br.com.wellingtoncosta.coroutines.di.modules.data.RepositoryModule
 import br.com.wellingtoncosta.coroutines.di.modules.data.RetrofitModule
+import br.com.wellingtoncosta.coroutines.di.modules.presentation.ActivityBuildersModule
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
@@ -13,7 +16,10 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [
     AndroidSupportInjectionModule::class,
-    RetrofitModule::class
+    ActivityBuildersModule::class,
+    AppModule::class,
+    RetrofitModule::class,
+    RepositoryModule::class
 ])
 interface AppComponent : AndroidInjector<App> {
 

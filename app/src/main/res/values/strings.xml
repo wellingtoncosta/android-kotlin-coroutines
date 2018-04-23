@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android Kotlin Coroutines</string>
+    <string name="toolbar_title">GitHub Users</string>
 </resources>
