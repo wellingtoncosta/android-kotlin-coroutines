@@ -1,7 +1,7 @@
 package br.com.wellingtoncosta.coroutines.data
 
 import br.com.wellingtoncosta.coroutines.domain.model.User
-import retrofit2.Call
+import kotlinx.coroutines.experimental.Deferred
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -11,9 +11,9 @@ import retrofit2.http.Path
 interface GithubApi {
 
     @GET("users")
-    fun getUsers(): Call<List<User>>
+    fun getUsers(): Deferred<List<User>>
 
     @GET("users/{username}")
-    fun getUserByUsername(@Path("username") username: String): Call<User>
+    fun getUserByUsername(@Path("username") username: String): Deferred<User>
 
 }

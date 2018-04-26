@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Android Kotlin Coroutines</string>
     <string name="toolbar_title">GitHub Users</string>
+    <string name="search_users"> Search Users</string>
+    <string name="network_error">Could not connect to server</string>
+    <string name="get_users_error">Could not get the users</string>
+    <string name="user_not_found">User not found</string>
 </resources>

@@ -1,6 +1,5 @@
 package br.com.wellingtoncosta.coroutines.data
 
-import br.com.wellingtoncosta.coroutines.domain.model.User
 import br.com.wellingtoncosta.coroutines.domain.repository.UserRepository
 import javax.inject.Inject
 
@@ -11,7 +10,7 @@ class UserRepositoryData @Inject constructor(
         private val remoteDataSource: UserDataSource.Remote
 ) : UserRepository {
 
-    override fun getAll(): List<User> = remoteDataSource.getAll()
+    override fun getAll() = remoteDataSource.getAll()
 
     override fun getByUsername(username: String) = remoteDataSource.getByUsername(username)
 
