@@ -60,7 +60,7 @@ class ListUsersActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         binding.searchView.setOnSearchViewListener(object : MaterialSearchView.SearchViewListener {
             override fun onSearchViewShown() { }
-            override fun onSearchViewClosed() { }
+            override fun onSearchViewClosed() { viewModel.getAll() }
         })
 
         binding.searchView.setOnQueryTextListener(object : MaterialSearchView.OnQueryTextListener {
