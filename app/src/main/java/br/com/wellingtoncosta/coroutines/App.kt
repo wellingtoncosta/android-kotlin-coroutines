@@ -1,22 +1,27 @@
 package br.com.wellingtoncosta.coroutines
 
-import br.com.wellingtoncosta.coroutines.di.components.DaggerAppComponent
+import android.app.Application
+import br.com.wellingtoncosta.coroutines.di.remoteModule
+import br.com.wellingtoncosta.coroutines.di.repositoryModule
+import br.com.wellingtoncosta.coroutines.di.uiModule
 import com.facebook.drawee.backends.pipeline.Fresco
-import dagger.android.AndroidInjector
-import dagger.android.support.DaggerApplication
+import org.koin.android.ext.android.startKoin
 
 /**
- * @author WellingtonCosta on 22/04/18.
+ * @author Wellington Costa on 22/04/18.
  */
-open class App : DaggerApplication() {
+open class App : Application() {
+
+    private val appModules by lazy {
+        listOf(remoteModule, repositoryModule, uiModule)
+    }
 
     override fun onCreate() {
         super.onCreate()
-        Fresco.initialize(this)
-    }
 
-    override fun applicationInjector(): AndroidInjector<out App> {
-        return DaggerAppComponent.builder().create(this)
+        startKoin(this, appModules)
+
+        Fresco.initialize(this)
     }
 
 }

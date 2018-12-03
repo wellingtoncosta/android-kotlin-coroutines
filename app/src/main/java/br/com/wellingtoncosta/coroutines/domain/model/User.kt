@@ -1,11 +1,6 @@
 package br.com.wellingtoncosta.coroutines.domain.model
 
-import com.google.gson.annotations.SerializedName
-
 /**
- * @author WellingtonCosta on 22/04/18.
+ * @author Wellington Costa on 22/04/18.
  */
-data class User (
-        @SerializedName("avatar_url") val avatarUrl: String,
-        @SerializedName("login") val username: String
-)
+data class User (val avatarUrl: String, val username: String)

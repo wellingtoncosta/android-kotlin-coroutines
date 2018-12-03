@@ -8,11 +8,13 @@
         <variable name="user" type="User" />
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-        android:padding="10dp">
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="8dp">
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/image"
@@ -37,6 +39,6 @@
             app:layout_constraintTop_toTopOf="@+id/image"
             android:text='@{"@" + user.username}' />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

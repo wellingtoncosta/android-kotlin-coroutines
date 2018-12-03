@@ -1,23 +1,20 @@
-package br.com.wellingtoncosta.coroutines.presentation
+package br.com.wellingtoncosta.coroutines.ui
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import br.com.wellingtoncosta.coroutines.R
 import br.com.wellingtoncosta.coroutines.databinding.ListUsersItemBinding
 import br.com.wellingtoncosta.coroutines.domain.model.User
 import com.facebook.drawee.generic.RoundingParams
 
 /**
- * @author wellingtoncosta on 23/04/18
+ * @author Wellington Costa on 23/04/18
  */
-class ListUsersAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-    internal var users: List<User> = emptyList()
-        set(users) {
-            field = users
-            notifyDataSetChanged()
-        }
+class ListUsersAdapter(
+    private val users: List<User>
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ListUsersViewHolder(LayoutInflater
@@ -39,8 +36,12 @@ class ListUsersAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         binding.image.setImageURI(user.avatarUrl)
     }
 
-    override fun getItemCount(): Int {
-        return if (users.isNotEmpty()) users.size else 0
-    }
+    override fun getItemCount() = users.size
+
+}
+
+class ListUsersViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+    val binding: ListUsersItemBinding = ListUsersItemBinding.bind(view)
 
 }

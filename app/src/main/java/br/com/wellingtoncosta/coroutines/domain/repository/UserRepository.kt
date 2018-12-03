@@ -1,15 +1,14 @@
 package br.com.wellingtoncosta.coroutines.domain.repository
 
 import br.com.wellingtoncosta.coroutines.domain.model.User
-import kotlinx.coroutines.experimental.Deferred
 
 /**
- * @author wellingtoncosta on 23/04/18
+ * @author Wellington Costa on 23/04/18
  */
 interface UserRepository {
 
-    fun getAll(): Deferred<List<User>>
+    suspend fun getAll(): List<User>
 
-    fun getByUsername(username: String): Deferred<User>
+    suspend fun getByUsername(username: String): User
 
 }
