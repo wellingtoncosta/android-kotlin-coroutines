@@ -16,4 +16,9 @@ open class CoroutineViewModel : ViewModel(), CoroutineScope {
 
     infix fun Job.addTo(list: ArrayList<Job>) { jobs.addAll(list) }
 
+    override fun onCleared() {
+        super.onCleared()
+        jobs.forEach { if(!it.isCancelled) it.cancel() }
+    }
+
 }
