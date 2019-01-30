@@ -14,7 +14,7 @@ open class CoroutineViewModel : ViewModel(), CoroutineScope {
 
     protected val jobs = ArrayList<Job>()
 
-    infix fun Job.addTo(list: ArrayList<Job>) { jobs.addAll(list) }
+    infix fun ArrayList<Job>.add(job: Job) { this.add(job) }
 
     override fun onCleared() {
         super.onCleared()
