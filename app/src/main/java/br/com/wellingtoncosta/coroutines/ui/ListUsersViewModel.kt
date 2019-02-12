@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 /**
  * @author Wellington Costa on 23/04/18
  */
- class ListUsersViewModel(
+class ListUsersViewModel(
         private val repository: UserRepository
 ) : CoroutineViewModel() {
 
@@ -26,7 +26,7 @@ import kotlinx.coroutines.launch
         jobs add launch {
             loading.value = true
             try {
-                users.value = repository.getAll()
+                users.value = repository.getAll().await()
                 loading.value = false
             } catch(t: Throwable) {
                 users.value = emptyList()
@@ -41,7 +41,7 @@ import kotlinx.coroutines.launch
         jobs add launch {
             loading.value = true
             try {
-                val user = repository.getByUsername(username)
+                val user = repository.getByUsername(username).await()
                 users.value = listOf(user)
             } catch(t: Throwable) {
                 users.value = emptyList()

@@ -16,10 +16,10 @@ class UserDataRepository(
 
     override suspend fun getAll() = withContext(IO) {
         async { api.getAll().await().map { it.toModel() } }
-    }.await()
+    }
 
     override suspend fun getByUsername(username: String) = withContext(IO) {
         async { api.getByUsername(username).await().toModel() }
-    }.await()
+    }
 
 }
