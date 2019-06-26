@@ -8,8 +8,8 @@ import kotlinx.coroutines.Deferred
  */
 interface UserRepository {
 
-    suspend fun getAll(): Deferred<List<User>>
+    suspend fun getAll(): List<User>
 
-    suspend fun getByUsername(username: String): Deferred<User>
+    suspend fun getByUsername(username: String): User
 
 }

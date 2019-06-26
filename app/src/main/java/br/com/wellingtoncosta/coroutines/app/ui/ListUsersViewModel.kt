@@ -37,7 +37,7 @@ class ListUsersViewModel(
         viewModeScope.launch {
             _loading.value = true
             try {
-                _users.value = repository.getAll().await()
+                _users.value = repository.getAll()
                 _loading.value = false
             } catch(t: Throwable) {
                 _users.value = emptyList()
@@ -52,7 +52,7 @@ class ListUsersViewModel(
         viewModeScope.launch {
             _loading.value = true
             try {
-                val user = repository.getByUsername(username).await()
+                val user = repository.getByUsername(username)
                 _users.value = listOf(user)
             } catch(t: Throwable) {
                 _users.value = emptyList()
