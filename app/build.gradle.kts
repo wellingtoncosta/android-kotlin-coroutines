@@ -13,7 +13,7 @@ android {
         targetSdkVersion(28)
         versionCode = 1
         versionName = "1.0"
-        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -37,25 +37,24 @@ dependencies {
     //AndroidX
     implementation("androidx.appcompat:appcompat:1.0.2")
     implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-    implementation("androidx.core:core-ktx:1.0.1")
-    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.core:core-ktx:1.0.2")
 
     // AndroidX Data Binding
-    kapt("androidx.databinding:databinding-compiler:3.3.0")
+    kapt("androidx.databinding:databinding-compiler:3.4.1")
 
     // AndroidX LiveData and ViewModel
     implementation("androidx.lifecycle:lifecycle-extensions:2.0.0")
 
     // Fresco
-    implementation("com.facebook.fresco:fresco:1.11.0")
+    implementation("com.facebook.fresco:fresco:2.0.0")
 
     // Google Material
     implementation("com.google.android.material:material:1.0.0")
 
     // Kotlin
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.20")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.40")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.2")
 
     // Koin
     implementation("org.koin:koin-androidx-scope:1.0.2")
@@ -73,6 +72,6 @@ dependencies {
 
     // Tests
     testImplementation("junit:junit:4.12")
-    androidTestImplementation("androidx.test:runner:1.1.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.1.1")
+    androidTestImplementation("androidx.test:runner:1.2.0")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
 }
