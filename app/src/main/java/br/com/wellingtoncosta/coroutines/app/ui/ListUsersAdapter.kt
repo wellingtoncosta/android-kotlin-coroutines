@@ -1,4 +1,4 @@
-package br.com.wellingtoncosta.coroutines.ui
+package br.com.wellingtoncosta.coroutines.app.ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -17,9 +17,11 @@ class ListUsersAdapter(
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return ListUsersViewHolder(LayoutInflater
+        return ListUsersViewHolder(
+            LayoutInflater
                 .from(parent.context)
-                .inflate(R.layout.list_users_item, parent, false))
+                .inflate(R.layout.list_users_item, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {

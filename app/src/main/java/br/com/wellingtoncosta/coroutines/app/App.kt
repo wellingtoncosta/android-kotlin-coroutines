@@ -1,9 +1,9 @@
-package br.com.wellingtoncosta.coroutines
+package br.com.wellingtoncosta.coroutines.app
 
 import android.app.Application
-import br.com.wellingtoncosta.coroutines.di.remoteModule
-import br.com.wellingtoncosta.coroutines.di.repositoryModule
-import br.com.wellingtoncosta.coroutines.di.uiModule
+import br.com.wellingtoncosta.coroutines.app.config.remoteModule
+import br.com.wellingtoncosta.coroutines.app.config.repositoryModule
+import br.com.wellingtoncosta.coroutines.app.config.uiModule
 import com.facebook.drawee.backends.pipeline.Fresco
 import org.koin.android.ext.android.startKoin
 

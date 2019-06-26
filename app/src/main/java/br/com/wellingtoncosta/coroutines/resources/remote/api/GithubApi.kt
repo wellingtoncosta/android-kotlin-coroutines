@@ -1,6 +1,6 @@
-package br.com.wellingtoncosta.coroutines.data.remote.api
+package br.com.wellingtoncosta.coroutines.resources.remote.api
 
-import br.com.wellingtoncosta.coroutines.data.remote.response.UserResponse
+import br.com.wellingtoncosta.coroutines.resources.remote.response.UserResponse
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 import retrofit2.http.Path

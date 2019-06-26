@@ -1,4 +1,4 @@
-package br.com.wellingtoncosta.coroutines.ui
+package br.com.wellingtoncosta.coroutines.app.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -82,13 +82,15 @@ class ListUsersActivity : AppCompatActivity() {
     }
 
     private fun observeUsers() {
-        viewModel.users().observe(this,
-                Observer { users -> binding.recyclerView.adapter = ListUsersAdapter(users) }
+        viewModel.users.observe(this,
+                Observer { users -> binding.recyclerView.adapter =
+                    ListUsersAdapter(users)
+                }
         )
     }
 
     private fun observeError() {
-        viewModel.error().observe(
+        viewModel.error.observe(
                 this,
                 Observer { t ->
                     Log.e("LOAD_USERS", "$t")

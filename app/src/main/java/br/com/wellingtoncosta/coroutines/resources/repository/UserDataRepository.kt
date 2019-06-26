@@ -1,8 +1,8 @@
-package br.com.wellingtoncosta.coroutines.data
+package br.com.wellingtoncosta.coroutines.resources.repository
 
-import br.com.wellingtoncosta.coroutines.data.mapper.toModel
-import br.com.wellingtoncosta.coroutines.data.remote.api.GithubApi
+import br.com.wellingtoncosta.coroutines.resources.remote.api.GithubApi
 import br.com.wellingtoncosta.coroutines.domain.repository.UserRepository
+import br.com.wellingtoncosta.coroutines.resources.remote.response.toModel
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.async
 import kotlinx.coroutines.withContext

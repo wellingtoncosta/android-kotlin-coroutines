@@ -4,20 +4,21 @@
         xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="br.com.wellingtoncosta.coroutines.ui.ListUsersViewModel" />
-        <variable name="viewModel" type="ListUsersViewModel" />
+        <import type="br.com.wellingtoncosta.coroutines.app.ui.ListUsersViewModel" />
+        <variable name="viewModel" type="br.com.wellingtoncosta.coroutines.app.ui.ListUsersViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.ListUsersActivity">
+        tools:context=".app.ui.ListUsersActivity">
 
         <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:theme="@style/AppTheme.AppBarOverlay">
+                android:theme="@style/AppTheme.AppBarOverlay"
+                app:layout_constraintTop_toTopOf="parent">
 
             <FrameLayout
                     android:id="@+id/toolbar_container"
@@ -50,7 +51,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/appbar"
                 app:onRefreshListener="@{() -> viewModel.getAll()}"
-                app:refreshing="@{safeUnbox(viewModel.loading())}">
+                app:refreshing="@{safeUnbox(viewModel.loading)}">
 
             <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_view"
